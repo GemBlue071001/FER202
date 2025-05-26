@@ -36,12 +36,8 @@ const AdminRegister = () => {
 
       await register({ user: userData });
       navigate('/login');
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError('Có lỗi xảy ra khi đăng ký');
-      }
+    } catch (error: any) {  
+      setError(error.message)
     }
   };
 

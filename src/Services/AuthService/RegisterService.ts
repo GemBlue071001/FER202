@@ -13,13 +13,9 @@ interface User {
         data: user,
       });
       return response.data;
-    } catch (error: unknown) {
+    } catch (error: any) {
   
-      if (error instanceof Error) {
-        console.error("Login request failed:", error.message); 
-      } else {
-        console.error("Unexpected error", error);
-      }
+      console.log("error.response.data", error);
       throw error; 
     }
   };
